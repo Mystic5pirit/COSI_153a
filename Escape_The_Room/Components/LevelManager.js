@@ -3,9 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import StartScreen from './StartScreen';
-import Level1_Wall1 from './Level_1/Wall1'
-import Level1_Wall2 from './Level_1/Wall2'
-import Level1_Wall3 from './Level_1/Wall3'
+import Level1_Wall1 from './Level_1/Wall1/Wall1'
+import Level1_Wall2 from './Level_1/Wall2/Wall2'
+import Level1_Wall3 from './Level_1/Wall3/Wall3'
 import AboutScreen from './AboutScreen'
 
 const Tab = createBottomTabNavigator();
