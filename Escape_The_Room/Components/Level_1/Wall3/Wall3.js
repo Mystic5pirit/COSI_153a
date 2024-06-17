@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Image, Text, Pressable } from "react-native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 import ThoughtBubble from "../../ThoughtBubble";
 
 
@@ -18,7 +20,7 @@ const Wall = () => {
 
 const WithPainting = ({navigation}) => {
     return(
-        <View style={{flex: 1, backgroundColor:'#89CFF0',flexDirection:"row",}}>
+        <SafeAreaView style={{flex: 1, backgroundColor:'#89CFF0',flexDirection:"row",}}>
             <View style={{flex:2}}/>
             <View style={{flex:1,alignItems:"center"}}>
                 <View style={{flex:1}}/>
@@ -28,27 +30,27 @@ const WithPainting = ({navigation}) => {
                 <View style={{flex:1}}/>
             </View>
             <View style={{flex:2}}/>
-        </View>
+        </SafeAreaView>
     )
 }
 
 const WithoutPainting = ({navigation}) => {
     return(
-        <View style={{flex: 1, backgroundColor:'#89CFF0',flexDirection:"row",}}>
-            <View style={{flex:2}}/>
+        <SafeAreaView style={{flex: 1, backgroundColor:'#89CFF0',flexDirection:"row",}}>
+            <View style={{flex:0.1}}/>
             <View style={{flex:1,alignItems:"center"}}>
                 <View style={{flex:1}}/>
                 <View style={{flex:1, padding:50}}>
                     <View style={{flex:1, backgroundColor:"#a86b32", justifyContent:"center", alignItems:"center"}}>
-                        <View style={{flex:100}}/>
-                        <Text style={{flex:1, fontFamily:"roboto", color:"#561900", fontSize:25}}>THE ARBORIST</Text>
-                        <View style={{flex:100}}/>
+                        <View style={{flex:1}}/>
+                        <Text adjustsFontSizeToFit={true} style={{flex:1, color:"#561900", fontSize:25}}>THE ARBORIST</Text>
+                        <View style={{flex:1}}/>
                     </View>
                 </View>
                 <Image source={require("../../../Images/GreatTree.png")} resizeMode="contain" style={{flex:1, transform:[{rotate:"180deg"}]}}></Image>
             </View>            
-            <View style={{flex:2}}/>
-        </View>
+            <View style={{flex:0.1}}/>
+        </SafeAreaView>
     )
 }
 

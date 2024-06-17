@@ -6,7 +6,7 @@ const Bookshelf = ({navigation}) => {
         <View style={{flex:1}}>
             <View style={{height:"15%"}} />
             <View style={{flex:1, flexDirection:"row", justifyContent:"center"}}>
-                <View style={{width:"20%", backgroundColor:"#a86b32", borderColor:"black", borderWidth:5, flexDirection:"column", alignItems:"center"}}>
+                <View style={{width:250, backgroundColor:"#a86b32", borderColor:"black", borderWidth:5, flexDirection:"column", alignItems:"center"}}>
                     <View style={{height:"4%"}}/>
                     <View style={{height:"20%", width:"80%", borderColor:"black", borderWidth:5, flexDirection:"row", alignItems:"flex-end"}}>
                         <View style={{flex:1, height:"80%", backgroundColor:"darkcyan", borderColor:"black", borderWidth:3}}></View>

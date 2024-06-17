@@ -8,11 +8,11 @@ import { View, Text } from "react-native"
  */
 const ThoughtBubble = ({displayText}) =>{
     return(
-        <View style={{height:"5%"}}>
+        <View style={{height:30}}>
             <View style={{height:"40%"}}/>
             <View style={{height:"60%", alignItems:"center"}}>
                 <View style={{width:"60%", backgroundColor:"white", borderRadius:5, alignItems:"center"}}>
-                    <Text>{displayText}</Text>
+                    <Text adjustsFontSizeToFit={true}>{displayText}</Text>
                 </View>
             </View>
         </View>

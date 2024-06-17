@@ -1,9 +1,11 @@
 import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 import { View, Text, Button } from "react-native";
 
 const StartScreen = ({navigation}) => {
     return (
-      <View style={{backgroundColor:'#89CFF0', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <SafeAreaView style={{backgroundColor:'#89CFF0', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>Home!</Text>
         <Button
           title="Go to About"
@@ -13,7 +15,7 @@ const StartScreen = ({navigation}) => {
           title="Go to Level 1"
           onPress={() => navigation.navigate('Level1')}
         />
-      </View>
+      </SafeAreaView>
     );
 }
 
