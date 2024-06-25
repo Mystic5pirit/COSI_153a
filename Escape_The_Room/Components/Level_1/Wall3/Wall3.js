@@ -26,7 +26,7 @@ const WithPainting = ({navigation}) => {
             <View style={{flex:1,alignItems:"center"}}>
                 <View style={{flex:1}}/>
                 <Pressable style={{flex:1}} onPress={() => navigation.navigate("WithoutPainting")}>
-                    <Image source={require("../../../Images/GreatTree.png")} resizeMode="contain" style={{flex:1}}></Image>
+                    <Image source={require("../../../Assets/Images/GreatTree.png")} resizeMode="contain" style={{flex:1}}></Image>
                 </Pressable>
                 <View style={{flex:1}}/>
             </View>
@@ -51,7 +51,7 @@ const WithoutPainting = ({navigation}) => {
                             <View style={{flex:1}}/>
                         </View>
                     </View>
-                    <Image source={require("../../../Images/GreatTree.png")} resizeMode="contain" style={{flex:1, transform:[{rotate:"180deg"}]}}></Image>
+                    <Image source={require("../../../Assets/Images/GreatTree.png")} resizeMode="contain" style={{flex:1, transform:[{rotate:"180deg"}]}}></Image>
                 </View>            
                 <View style={{flex:0.1}}/>
             </View>

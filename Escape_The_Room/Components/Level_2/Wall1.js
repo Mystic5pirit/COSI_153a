@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import { Pressable, View, Text} from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useValue } from "../../ValueContext";
-import ThoughtBubble from "../../ThoughtBubble";
-import ItemHolder from "../../ItemHolder";
-import Door from "../../Door";
+import { useValue } from "../ValueContext";
+import ThoughtBubble from "../ThoughtBubble";
+import ItemHolder from "../ItemHolder";
+import Door from "../Door";
 
 const Wall = ({navigation}) => {
     const {currentValue,setCurrentValue} = useValue();

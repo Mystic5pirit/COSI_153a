@@ -1,42 +1,33 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ValueProvider from './ValueContext';
+
+import PersistentValueProvider from './PersistentValueContext';
 import StartScreen from './StartScreen';
 import AboutScreen from './AboutScreen'
 import VictoryScreen from './VictoryScreen';
-import Level1_Wall1 from './Level_1/Wall1/Wall1'
-import Level1_Wall2 from './Level_1/Wall2/Wall2'
-import Level1_Wall3 from './Level_1/Wall3/Wall3'
+import Level1 from './Level_1/Level1'
+import Level2 from './Level_2/Level2';
 
-const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
-
-const Level1 = ()  =>{
-    const data = {hasKey:false, items:""};
-    return (
-        <ValueProvider value={data}>
-            <Tab.Navigator>
-                <Tab.Screen name='Wall1' component={Level1_Wall1} options={{unmountOnBlur: true}} />
-                <Tab.Screen name='Wall2' component={Level1_Wall2} options={{unmountOnBlur: true}} />
-                <Tab.Screen name='Wall3' component={Level1_Wall3} options={{unmountOnBlur: true}} />
-            </Tab.Navigator>
-        </ValueProvider>
-    )
-}
 
 
 const App = () => {
+    // Max Level is stored in StartScreen
+    const data = {unlockedLevel:1, maxLevel:2}
     return (
-        <NavigationContainer>
-            <Stack.Navigator  initialRouteName='Start'>
-                <Stack.Screen name='Start' component={StartScreen} />
-                <Stack.Screen name='About' component={AboutScreen} />
-                <Stack.Screen name='Level1' component={Level1} options={{headerShown:false}} />
-                <Stack.Screen name='Victory' component={VictoryScreen} />
-            </Stack.Navigator>
-        </NavigationContainer>
+        <PersistentValueProvider value={data}>
+            <NavigationContainer>
+                <Stack.Navigator  initialRouteName='Start'>
+                    <Stack.Screen name='Start' component={StartScreen} options={{headerShown:false}}/>
+                    <Stack.Screen name='About' component={AboutScreen}/>
+                    <Stack.Screen name='Level1' component={Level1} options={{headerShown:false}} />
+                    <Stack.Screen name='Level2' component={Level2} options={{headerShown:false}} />
+                    <Stack.Screen name='Victory' component={VictoryScreen}/>
+                </Stack.Navigator>
+            </NavigationContainer>
+         </PersistentValueProvider>
+        
     );
 }
 
