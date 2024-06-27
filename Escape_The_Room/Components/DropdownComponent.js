@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 
-const DropdownComponent = ({data, value, setValue}) => {
+const DropdownComponent = ({data, dropdownLabel, value, setValue}) => {
     const [isFocus, setIsFocus] = useState(false);
     const renderLabel = () => {
       if (value || isFocus) {
         return (
           <Text style={[styles.label, isFocus && { color: 'blue' }]}>
-            Dropdown label
+            {dropdownLabel}
           </Text>
         );
       }
@@ -55,10 +55,11 @@ export class dataFormat{
 
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: 'white',
+
       padding: 16,
     },
     dropdown: {
+      backgroundColor: "white",
       height: 50,
       width: 100,
       borderColor: 'gray',
@@ -70,10 +71,8 @@ export class dataFormat{
       marginRight: 5,
     },
     label: {
-      position: 'absolute',
-      backgroundColor: 'white',
-      left: 22,
-      top: 8,
+  
+
       zIndex: 999,
       paddingHorizontal: 8,
       fontSize: 14,

@@ -12,7 +12,6 @@ const About = ({navigation}) => {
 
     const updateUnlockedLevel = (newValue) => {
         setCurrentValue({...currentValue, unlockedLevel:newValue});
-        console.log(currentValue)
     }
 
     return(
@@ -27,6 +26,7 @@ const About = ({navigation}) => {
                 </View>
             </Pressable>
             <DropdownComponent
+             dropdownLabel={"Unlocked Level"}
              data={levelList}
              value={currentValue["unlockedLevel"]}
              setValue={updateUnlockedLevel} />

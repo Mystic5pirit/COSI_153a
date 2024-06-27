@@ -21,7 +21,7 @@ const Wall = ({navigation}) => {
 return(
     <SafeAreaView style={{backgroundColor:'#89CFF0', flex:1, flexDirection:"col"}}>
         <ThoughtBubble displayText={displayText} />
-        <Door openDoor={openDoor} currentValue={currentValue}/>
+            <Door openDoor={openDoor} currentValue={currentValue}/>
         <ItemHolder/>
     </SafeAreaView>
 )
