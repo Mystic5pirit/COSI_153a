@@ -18,19 +18,20 @@ const Box = ({requiredText, hintText, navigation, setDisplayText}) =>{
                     <View style={{flex:1, backgroundColor:"#763900",  borderColor:"black", borderWidth:3}}>
                         <View style={{flex:1, justifyContent:"center", alignItems:"center"}}>
                             <View style={{flex:1}} />
-                            <Text adjustsFontSizeToFit={true} style={{flex:1, color:"#561900", fontSize:20, fontFamily:"serif"}}
+                            <Text adjustsFontSizeToFit={true} style={{flex:1, color:"#561900", fontSize:10, fontFamily:"serif"}}
                              textAlign="center">{hintText}</Text>
                             <View style={{flex:1}} />
                         </View>
                     </View>
                     <View style={{flex:2, backgroundColor:"#763900",  borderColor:"black", borderWidth:3, alignItems:"center"}}>
-                        <TextInput placeholder={requiredText.split('').
+                        <TextInput autoCapitalize="characters"
+                        placeholder={requiredText.split('').
                         map(character => {
                             if (character == " "){
                                 return(" ");
                             } else {return "_";}}).join(' ')} 
                         onChangeText={text => {{setEnteredText(text);
-                             if(text == {requiredText}['requiredText'])
+                             if(text.toUpperCase() == {requiredText}['requiredText'])
                              {setDisplayText("The Box Unlocked");
                              }
                             else {setDisplayText("The Box Appears To Be Locked");}

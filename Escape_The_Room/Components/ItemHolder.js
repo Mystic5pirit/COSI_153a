@@ -7,7 +7,7 @@ const ItemHolder = () => {
 
     return(
         <View style={{height:"5%", backgroundColor:"white"}}>
-            <Text adjustsFontSizeToFit={true} style={{flex:1}}>{currentValue["items"]}</Text>
+            <Text adjustsFontSizeToFit={true} style={{flex:1, fontSize:20}}>{currentValue["items"]}</Text>
 
         </View>
     )
