@@ -2,7 +2,8 @@
   "expo": {
     "name": "JAER",
     "slug":"JAER",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "orientation": "portrait"
   },
   "name": "JAER"
 }

@@ -5,7 +5,7 @@ const Box = ({requiredText, hintText, navigation, setDisplayText}) =>{
     const [enteredText, setEnteredText] = useState("");
 
     const openBox = () => {{
-        if(enteredText == {requiredText}['requiredText']){
+        if(enteredText.toUpperCase() == {requiredText}['requiredText']){
             navigation.navigate('BoxView');
             setDisplayText("");
         } else {

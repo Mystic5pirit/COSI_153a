@@ -112,7 +112,7 @@ getData(currentValue, setCurrentValue)
     const clearAll = async () => {
         try {
           console.log('in clearData')
-          await storage.clearMapForKey('sharedData');
+          await storage.clearMapForKey('sharedData').then(console.log("Data cleared"));
         } catch(e) {
           console.log("error in clearAll ")
           console.dir(e)

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, StyleSheet, Pressable, } from "react-native";
 import DropdownComponent, {dataFormat} from "./DropdownComponent";
 import { useValue, clearData } from "./PersistentValueContext";
@@ -9,7 +9,7 @@ const About = ({navigation}) => {
     for(let i = 1; i <= currentValue["maxLevel"]; i++){
         levelList.push(new dataFormat("Level " + i, i))
     }
-
+    useEffect(() => {},[currentValue])
     const updateUnlockedLevel = (newValue) => {
         setCurrentValue({...currentValue, unlockedLevel:newValue});
     }
@@ -20,7 +20,7 @@ const About = ({navigation}) => {
             <Text style={styles.text}>It is planned to have different puzzles for each level.</Text>
             <Text style={styles.text}>The player needs to use each wall in the room to solve each puzzle.</Text>
             <Text style={styles.text}>The highest level unlocked is level {currentValue["unlockedLevel"]}</Text>
-            <Pressable style={{}} onPress={()=>clearData()}>
+            <Pressable style={{}} onPress={()=>{clearData(); updateUnlockedLevel(1)}}>
                 <View style={{backgroundColor:"red", padding:15}}>
                     <Text>WIPE SAVE</Text>
                 </View>

@@ -1,18 +1,18 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ValueProvider from '../ValueContext';
 
-import Level1_Wall1 from './Wall1'
-import StatueWall, {GW, JA, TJ, JM, JM2, JQA, AJ, MVB, WHH, JT} from './StatueWall'
+import Wall1 from './Wall1'
+import {GW, JA, TJ, JM, JM2, JQA, AJ, MVB, WHH, JT} from './StatueWall'
 
 
 const Tab = createBottomTabNavigator();
 
 const Level2 = ()  =>{
-    const data = {hasKey:false, items:""};
+    const data = {secretCode:[1, 7, 7, 6], currentCode:[]};
     return (
         <ValueProvider value={data}>
             <Tab.Navigator>
-                <Tab.Screen name='Door' component={Level1_Wall1} options={{unmountOnBlur: true}} />
+                <Tab.Screen name='Door' component={Wall1} options={{unmountOnBlur: true}} />
                 <Tab.Screen name='GA' component={GW} options={{unmountOnBlur: true}}/>
                 <Tab.Screen name='JA' component={JA} options={{unmountOnBlur: true}}/>
                 <Tab.Screen name='TJ' component={TJ} options={{unmountOnBlur: true}}/>

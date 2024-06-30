@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
-import { View, Text, Button, Pressable } from "react-native";
+import { View, Text, Button, Pressable, Image } from "react-native";
 import { useValue } from "./PersistentValueContext";
 
 
@@ -10,8 +10,9 @@ import { useValue } from "./PersistentValueContext";
 const StartScreen = ({navigation}) => {
   const [selectedLevel, setSelectedLevel] = useState(1);
   const {currentValue, setCurrentValue} = useValue();
-  let maxLevel = 2;
+  let maxLevel = 3;
   useEffect(() => {setCurrentValue({...currentValue, maxLevel:maxLevel})}, [])
+  console.log(currentValue)
 
   const updateLevel = (change) => {
     let newLevel = selectedLevel+change;
@@ -30,7 +31,7 @@ const StartScreen = ({navigation}) => {
     if (selectedLevel <= 0){
       return("Level1")
     }
-    let unlockedLevel = 2
+    let unlockedLevel = currentValue["unlockedLevel"]
     if (selectedLevel < unlockedLevel){
       return("Level" + selectedLevel);
     } else {
@@ -41,11 +42,7 @@ const StartScreen = ({navigation}) => {
 
   return (
     <SafeAreaView style={{backgroundColor:'#89CFF0', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-      <Button
-        title="Go to About"
-        onPress={() => navigation.navigate('About')}
-      />
+      <Image style={{width:"80%", flex:0.7}} source={require("../Assets/Images/JAER_Logo.png")} resizeMode="contain"/>      
       <View style={{height:"7%", width:"50%", flexDirection:"row"}}>
         <Pressable style={{flex:2, backgroundColor:"blue", borderRadius:20,
           borderColor:"black", borderWidth:4}} onPress={()=>updateLevel(-1)}>
@@ -65,6 +62,12 @@ const StartScreen = ({navigation}) => {
             style={{fontSize:100, alignSelf:"center", justifyContent:"center", color:"white", padding:0}}>{"I>"}</Text>
         </Pressable>
       </View>
+      <View style={{flex:0.03}} />
+      <Button
+        title="Go to About"
+        onPress={() => navigation.navigate('About')}
+      />
+      <View style={{flex:0.5}}/>
     </SafeAreaView>
   );
 }

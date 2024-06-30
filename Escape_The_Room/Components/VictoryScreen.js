@@ -3,10 +3,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Text } from "react-native";
 import { useValue } from "./PersistentValueContext";
 
-const VictoryScreen = ({navigation, storeData}) => {
+const VictoryScreen = ({navigation, route}) => {
     const {currentValue, setCurrentValue} = useValue();
-
-    useEffect(()=>{setCurrentValue({...currentValue, unlockedLevel:(Math.min(currentValue["maxLevel"], (currentValue["unlockedLevel"] + 1)))})}, [])
+    if (route.params["currentLevel"] >= currentValue["unlockedLevel"]){
+        useEffect(()=>{setCurrentValue({...currentValue, unlockedLevel:(Math.min(currentValue["maxLevel"], (currentValue["unlockedLevel"] + 1)))})}, [])
+    }
 
     return(
         <SafeAreaView style={{backgroundColor:'#89CFF0', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
