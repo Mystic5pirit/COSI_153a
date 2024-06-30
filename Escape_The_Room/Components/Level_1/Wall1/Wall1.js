@@ -11,7 +11,7 @@ const Wall = ({navigation}) => {
     const [displayText, setDisplayText] = useState("");
 
     const openDoor = () => {{
-        if(currentVale["hasKey"]){
+        if(currentValue["hasKey"]){
             navigation.navigate("Victory", {currentLevel:1});
         } else {
             setDisplayText("The Door Appears To Be Locked");
