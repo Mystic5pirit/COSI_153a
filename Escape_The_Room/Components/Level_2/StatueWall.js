@@ -39,7 +39,7 @@ const StatueWall = ({presidentNumber, presidentName}) => {
                 <Pressable style={{flex:1, alignItems:"center", justifyContent:"center"}} onPress={()=>{setHeadRemoved(true)}}>
                     <Image style={{width:256, height:512}} resizeMode="contain" source={statuesWithHeads[presidentNumber - 1]}>
                     </Image>
-                    <Text adjustsFontSizeToFit={true} style={{backgroundColor:"goldenrod", borderRadius:5, padding:1, width:"30%", height:20, position:"absolute", top:375, textAlignVertical:"center", textAlign:"center", fontSize:10}}>
+                    <Text adjustsFontSizeToFit={true} style={{backgroundColor:"goldenrod", borderRadius:5, padding:1, width:"30%", height:20, position:"absolute", top:390, textAlignVertical:"center", textAlign:"center", fontSize:10}}>
                         {presidentName}</Text>
                 </Pressable>
             </View>
@@ -50,7 +50,7 @@ const StatueWall = ({presidentNumber, presidentName}) => {
                 <Pressable style={{flex:1, alignItems:"center", justifyContent:"center"}} onPress={()=>{currentValue["currentCode"].push(presidentNumber); console.log(currentValue["currentCode"])}}>
                     <Image style={{width:256, height:512}} resizeMode="contain" source={statuesWithoutHeads[presidentNumber - 1]}>
                     </Image>
-                    <Text adjustsFontSizeToFit={true} style={{backgroundColor:"goldenrod", borderRadius:5, padding:1, width:"30%", height:20, position:"absolute", top:375, textAlignVertical:"center", textAlign:"center", fontSize:10}}>
+                    <Text adjustsFontSizeToFit={true} style={{backgroundColor:"goldenrod", borderRadius:5, padding:1, width:"30%", height:20, position:"absolute", top:390, textAlignVertical:"center", textAlign:"center", fontSize:10}}>
                         {presidentName}</Text>
                 </Pressable>
             </View>
